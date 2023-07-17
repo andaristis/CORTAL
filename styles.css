@@ -1,0 +1,554 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Quicksand:wght@300;500&family=Roboto+Mono:ital@1&family=Roboto+Slab&family=Sofia+Sans+Semi+Condensed:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Josefin+Sans:wght@300&family=Quicksand:wght@300;500&family=Roboto+Mono:ital@1&family=Roboto+Slab&family=Sofia+Sans+Semi+Condensed:wght@100&display=swap');
+
+*{
+    margin:0;
+    box-sizing: border-box;
+}
+
+body{   
+    display: flex;
+}
+
+
+.mostrar-puertas,.mostrar-monoblock,.mostrar-ventanas, .mostrar-mamparas{
+    max-height: 100vh;
+    display: flex;
+    width: 80%;
+    background-color: rgb(188, 222, 233);
+}
+
+.ocultar-barraLateral,.ocultar-puertas,.ocultar-monoblock, .ocultar-mamparas, .ocultar-ventanas, .ocultar-inicio, .ocultar-resultadoMonoblock,.ocultar-resultadoVentanas,.ocultar-resultadoMamparas,.ocultar-resultadoPuertas, .ocultar-mosquitero, .ocultar-mosquitero, .ocultar-docs{
+    display:none
+}
+
+.inicio {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    z-index: 2;
+}
+
+.fondoInicioColor{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(1, 1, 110);
+    opacity: 80%;
+    height: 100vh;
+    width: 100vw;
+    z-index: -1;
+}
+.fondoInicio{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index:-2 ;
+    background-image: url('img/fonfo_inicio.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.btn-tipo-inicio{
+    width: 100%;
+    height: 2.5rem;
+    border-top: 2px solid yellow;
+    border-right: none;
+    border-left: none;
+    border-bottom: none;
+    background-color: blue;
+    font-family: 'Josefin Sans', sans-serif;
+    color:yellow;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    opacity: 100%;
+}
+
+.contenedor-logo-inicio{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding:5%;
+}
+    
+.logo-inicio{
+    height: 15rem;
+    transition: scale 0.3s ease;
+}
+
+.contenedor, .contenedorVent, .contenedorMamp, .contenedorPuerta{
+    max-height: 100vh;
+    width:100%;
+    display: inline-block;
+    align-items: flex-start;
+    justify-content:center;
+    flex-direction: column;
+}
+.barra-lateral{
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(to bottom, blue, darkblue);
+    width: 20%;
+    align-items: center;
+    min-height: 100vh;
+    max-height: 100vh;
+    box-shadow: 5px 0 15px 0px rgba(32, 16, 66, 0.75);
+    z-index: 0;
+}
+
+.contenedor-cliente-tk p{
+    font-family: 'Roboto Slab', monospace;
+    font-weight:normal;
+    color: black;
+}
+
+p{
+    font-family: 'Josefin Sans', sans-serif;
+    color:yellow;
+    font-size: 1.2rem;
+    text-align: center;
+    padding-bottom: 0.5rem;
+}
+
+.btn-tipo{
+    width: 100%;
+    height: 2.5rem;
+    border-top: 2px solid yellow;
+    border-right: none;
+    border-left: none;
+    border-bottom: none;
+    background-color: transparent;
+    font-family: 'Josefin Sans', sans-serif;
+    color:yellow;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-tipo:hover, .btn-selected,  .btn-tipo-inicio:hover{
+    background-color: rgba(255, 255, 0);
+    color:blue;
+}
+
+.btn-tipo:last-child, .btn-tipo-inicio:last-of-type {
+    border-bottom: 2px solid yellow;
+} 
+
+.contenedor-logo{
+    height: 30vh;
+    width: 30vh;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo{
+    width: 100%;
+    max-height: 90%;
+    filter: drop-shadow( 2px 2px 5px #2C3E50);
+    transition: scale 0.3s ease;
+}
+
+.logo:hover, .logo-inicio:hover{
+    scale: 1.05;
+}
+
+.ingreso-datos, .ingreso-datos-vent,.ingreso-datos-mamp,.ingreso-datos-puerta{
+    max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items:center;
+    width:100%;
+    overflow-y: auto;
+}
+
+.resultadoMonoblock, .resultadoVentanas, .resultadoMamparas, .resultadoPuertas{
+   background-color: rgb(255, 255, 255);
+   overflow-y: auto;
+   width:40%
+}
+
+label, .separador{
+    font-size: large;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: bold;
+}
+
+.separador{
+    font-size: xx-large;
+}
+
+input[type="checkbox"] {
+    width: 1rem;
+    margin-left:0.5rem;
+    margin-right:0.5rem;
+    width: 5%;
+}
+
+.checksradios,.checksradiosVent {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items:flex-end;
+    margin:0.5rem 0;
+}
+
+.contenedor-checks, .contenedor-radios, .contenedor-radios-ventanas, .contenedor-checks-ventanas {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 0.5rem;
+}
+
+.input{
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    align-items: center;
+}
+
+.contenedor-datos, .contenedor-datos-vent, .contenedor-datos-mamp, .contenedor-datos-puerta {
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    margin:1rem 0;
+    width: 33rem;
+}
+
+#altoVent, #anchoVent, #anchoMampara, #altoMampara, #anchoMamparaInferior, #anchoMB, #altoMB, #anchoPuerta, #altoPuerta{
+    width: 100%;
+    height: 40px;
+}
+
+input[type="number"],input[type="text"], .observaciones, .observacionesVent, .observacionesMamp {
+    background-color:rgb(255, 255, 255);
+    border: none;
+    border-radius: 5px;
+    padding: 8px;
+    margin-bottom: 0.2rem;
+    font-size: 1rem;
+    color: #333;
+    box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
+    text-align:center;
+    font-family: 'Josefin Sans', sans-serif;
+    justify-content: center;
+    font-weight: bold;
+}
+
+input::placeholder, .observaciones::placeholder {
+    color: #000000;
+    font-size: 0.9rem;
+    text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
+    }
+    
+.observaciones::placeholder {
+    padding: 1rem;
+}
+option:hover{
+    border:1px solid black
+}
+input:focus::placeholder, .observaciones:focus::placeholder {
+    color: transparent;
+}
+
+.label-pedido{
+    width:49%
+}
+
+select, #acrilico {
+    margin-bottom: 0.2rem;
+}
+
+.contenedor-serie{
+    width: 50%;
+}
+.contenedorDetallesMB{
+    border-top: 3px solid black
+}
+.contenedor-serie, .contenedor-cajon, .contenedor-ventana,.contenedor-mampara, .contenedor-puerta{
+    border-top: 1px solid #2C3E50;
+    border-bottom: 1px solid #2C3E50;
+    padding: 1rem 0;
+    text-align: center;
+    display:flex ;
+    flex-wrap: wrap;
+    width: 90%;
+    justify-content: center;
+}
+
+label[for="modeloPuerta"],label[for="manoPuerta"],label[for="cajon"], label[for="testero"], label[for="serie"], label[for="serieMB"], label[for="ancho_cajon"],label[for="colorCajon"],label[for="colorLamas"],label[for="colorVentana"], label[for="colorMampara"],label[for="vidrioMB"], label[for="nombreClienteMB"],label[for="nombreClienteVent"],label[for="nombreClientePuerta"],label[for="nombreClienteMamp"], label[for="cantidadMB"],label[for="cantidadVent"],label[for="cantidadMamp"],label[for="cantidadPuerta"], label[for="observaciones"],label[for="observacionesMamp"],label[for="observacionesVent"],label[for="observacionesPuerta"], label[name="ruedas"], label[for="serieVent"],label[for="colorVent"],label[for="travesanoPuerta"],label[for="colorPuerta"],label[for="acrilico"],label[for="vidrioVent"], label[for="vidrioPuerta"],[name="ruedasVent"] {
+    width: 20%;
+    text-align: left;
+    margin-left: 0px;
+}
+
+#modeloPuerta,#manoPuerta,#serieVent, #serieMB, #testero,#cajon,#ancho_cajon,#colorCajon,#colorPuerta,#colorVentana,#colorMampara,#colorVent,#colorLamas,#vidrioMB,#vidrioPuerta,#vidrioVent, #nombreClienteMB,#nombreClienteMamp,#nombreClientePuerta,#nombreClienteVent, #cantidadMB,#cantidadVent,#cantidadMamp,#cantidadPuerta,#observaciones,#observacionesVent,#observacionesMamp,#observacionesPuerta,#acrilico,#travesanoPuerta{
+    margin-right: 0px;
+    font-family: 'Sofia Sans Semi Condensed', sans-serif;
+    font-size: 0.9rem;
+    width:80%;
+    height: 25px;
+    text-align: center;
+    cursor:pointer;
+    box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
+    text-align:center;
+    font-family: 'Josefin Sans', sans-serif;
+    justify-content: center;
+    background-color: white;
+    border:1px solid rgb(188, 222, 233);
+    flex-shrink: 0;
+    font-weight: bold;
+}
+
+#observaciones, #observacionesVent, #observacionesMamp,#observacionesPuerta{
+    height: 50px;
+}
+
+.colores{
+    width: 100%;
+    flex-shrink:0;
+}
+
+.fondoTranslucido{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.665);
+    
+}
+
+#calcularMonoblock,#calcularVentana,#calcularMamparas,#calcularPuerta,#calcularMamparasConDiferencia {
+    margin: 1rem;
+    width:90%;
+    background-color: rgba(0, 0, 255, 0.177);
+    color: blue;
+    font-family: 'Sofia Sans Semi Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+#calcularMonoblock:hover, #calcularVentana:hover, #calcularMamparas:hover,#calcularPuerta:hover,#calcularMamparasConDiferencia:hover, .btn-imprimir:hover{
+    background-color: rgba(0, 0, 255, 0.91);
+    color: yellow;
+}
+
+.diferencia{
+    height:30px;
+    position:relative;
+    bottom:0.5rem;
+}
+
+label[for="diferencia-medida"] {
+    font-size: medium;
+    position:relative;
+}
+
+.ocultar-anchoinf{
+    display:none
+}
+
+.impresora{
+    background-image: url('img/impresora.png');
+    position:absolute;
+    width: 3rem;
+    height: 3rem;
+    bottom: 1rem;
+    right: 25%;
+    background-size: cover;
+}
+
+.cerrar{
+    display:flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    background-color: transparent;
+    color: black;
+    border:none;
+    font-weight: bold;
+    margin: 1px;
+}
+
+input[type="radio"], input[name="marco_superior_cerrado"], input[name="travesano"], input[name="mosquitero"], input[name="mosquiteroVent"]{
+    width: 1.5rem;
+}
+
+@media print {
+body * {
+      visibility: hidden;
+      box-sizing: border-box;
+}
+.print-div *{
+    visibility: visible;
+}
+
+.print-div {
+    position: absolute;
+    left: 0;
+    top: 0;
+    border:1px solid black;
+    background-color: #ffffff;
+    width: 7cm ;
+}
+.cerrar{
+    display: none;
+}
+}
+
+.fecha, .contenedor-cliente-tk, .contenedor-logo-tk{
+    width:100%;
+    height:1cm;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor-logo-tk{
+    height: auto;
+    width: 100%;
+}
+
+.logoTicketMB,.logoTicketVent,.logoTicketMamp {
+    width: 80%;
+}
+
+.medidaGeneral{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    padding-bottom:0.5rem;
+}
+
+.caracteristicas, .mostrarObservaciones{
+    flex-direction: column;
+    height:auto;
+    text-align: center;
+}
+
+#fecha-actual, .contenedor-cliente p, .caracteristicas, .mostrarObservaciones,  .impresion p{
+    font-family: 'Roboto Slab', monospace;
+    font-weight:normal;
+}
+
+.caracteristicas>div:nth-child(-n+2){
+    font-size: 1.5rem;
+}
+
+.caracteristicas>div:nth-child(2){
+    font-size: 1rem;
+    padding-bottom: 0.5rem;
+}
+
+.perfil-final{
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.detalles{
+    padding: 0.5rem 0 0.5rem 0;
+}
+
+.perfil-final:nth-child(1), #infoVidrios,.detalles ,.titulo {
+    border-top: 3px solid black;
+}
+
+.perfil-final:nth-child(3),.perfil-final:nth-child(2), .perfil-final:nth-child(5),.mosquiteroInfoMB, .vidrioInfoMB, .perfil-final-marcosupPuerta {
+    border-bottom: 3px solid black;
+}
+
+.titulo{
+    padding: 0.2rem 0;
+}
+
+.ocultar-botonImprimir{
+    display: none;
+}
+.fuente-andaristis,.volver{
+    font-family: 'Comfortaa', cursive;
+}
+.volver{
+    padding: 1rem;
+    position: absolute;
+    z-index: 10;
+
+}
+.inicio a,.inicio span, .barra-lateral a,.barra-lateral span {
+    /* Estilos que deseas aplicar a los enlaces dentro de la clase "inicio" */
+    color: yellow;
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: 'Comfortaa', cursive;
+    text-decoration: none;
+}
+.contenedor-info-inicio {
+    width: 100vw;
+}
+.contenedor-info, .contenedor-info-inicio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 1rem;
+    font-size: large;
+}
+
+.barra-lateral a,.barra-lateral span, .contenedor-info-inicio a, .contenedor-info-inicio span {
+    font-size: large;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.barra-lateral p{
+    font-weight: bold;
+}
+.barrita {
+    padding: 2px;
+    font-size: large;
+    font-weight: bold;
+}
+
+.documentos{
+    z-index: 4;
+    color: yellow;
+    font-size: larger;
+    overflow-y: auto;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    max-height: 100vh;
+}
+
+.documentos span {
+    display: block;
+  }
+.contenedor-texto{
+    padding: 2% 10%;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: auto;
+}
+.docs-inicio, .docs-barra,.volver{
+    cursor: pointer;
+}
