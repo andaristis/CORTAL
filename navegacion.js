@@ -93,6 +93,7 @@ function simulateLoader() {
 }
 
 simulateLoader();
+
 document.addEventListener("DOMContentLoaded", function() {
     setTimeout(function() {
     loader.style.display = "none";
