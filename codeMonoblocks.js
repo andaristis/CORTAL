@@ -350,7 +350,7 @@ contenedorDetallesMB.innerHTML = `${cantidadMB.value} - CAJONES:<br><FONT SIZE=6
 tituloVentana.innerHTML = `<b>CORTES PARA VENTANA</b>`
 
 //Agrega los detalles y carcaterísticas de la ventana al ticket
-contenedorSerie.innerHTML = `<b>Detalles Ventana</b><br>${medidasACortar.anchoVentana} x ${medidasACortar.altoVentana}<br>${serieMB.value}<br>Color: ${colorVentana.value}<br>Vidrios: ${mensajeVidrio}`
+contenedorSerie.innerHTML = `<b>Detalles Ventana</b><br>${medidasACortar.altoVentana} x ${medidasACortar.anchoVentana}<br>${serieMB.value}<br>Color: ${colorVentana.value}<br>Vidrios: ${mensajeVidrio}`
 
 //Agrega los cortes de cada perfil de la ventana al ticket, agrega plurales según corresponda
 cortesEnganchesMB.innerHTML = `${cantidadEnganches} ENGANCHES:<br/><FONT SIZE=6>${ventanaACortarMB.enganches}</FONT> cms.`

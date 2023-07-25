@@ -75,12 +75,36 @@ const docsBarra = document.querySelector(".docs-barra");
 const docsInicio = document.querySelector(".docs-inicio");
 const documentos = document.querySelector(".documentos");
 const volver = document.querySelector(".volver");
+const loader = document.querySelector(".loader");
+
+function simulateLoader() {
+  var progress = 0;
+  
+  var text = document.querySelector('.loader-text');
+
+  var interval = setInterval(function() {
+    if (progress < 100) {
+      progress += 2;
+      text.textContent = progress + '%';
+    } else {
+      clearInterval(interval);
+    }
+  }, 35);
+}
+
+simulateLoader();
+document.addEventListener("DOMContentLoaded", function() {
+    setTimeout(function() {
+    loader.style.display = "none";
+  }, 2000);
+});
+
+/*window.addEventListener('load', function() {
+  loader.style.display = "none";
+});*/
 
 window.addEventListener('DOMContentLoaded', function() {
-
-  // Agrega un listener de evento al botón
   volver.addEventListener('click', function() {
-      // Recarga la página
       location.reload();
   });
 });
